@@ -72,8 +72,6 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 				{/*<button className={s.inputButton} ></button>*/}
 				<Button><Image src="/icons/rightArrowIcon.png" alt="submit" width={24} height={24}/></Button>
 			</div>
-
-
 	</div>
 )
 }

@@ -14,13 +14,13 @@ export const Header = forwardRef<HTMLDivElement, PropsType>(
         return (
             <div ref={ref} className={styles.header}>
                 <div className={styles.logoContainer}>
-                    <Image src=""  alt="logo" width={100} height={100} style={{objectFit:"cover",borderRadius:"8px"}} />
+                    <Image src="/logo/label_logo.jpg"  alt="logo" width={100} height={100} style={{objectFit:"cover",borderRadius:"8px"}} />
                 </div>
                 <div className={styles.navWrapper}>
                     <Navbar />
                 </div>
                 <Image
-                    src="/logo/label_logo.jpg"
+                    src="/icons/burgerMenu.svg"
                     id="burger-menu"
                     alt="open-menu"
                     className={styles.burgerMenuIcon}
