@@ -1,0 +1,45 @@
+.link {
+  position: relative;
+  text-decoration: none;
+  line-height: 1.4;
+  color: #676767;
+  font-size: 20px;
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &:visited {
+    color: #ffffff;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease-in-out, bottom 0.3s ease-in-out, background 0.3s;
+    bottom: -10px;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.active {
+  color: #ffffff;
+
+  &::before {
+    width: 100%;
+    background-color: #676767;
+    bottom: -10px;
+  }
+}
+.contactUsBlock{
+  margin:200px 100px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

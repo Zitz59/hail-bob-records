@@ -1,0 +1,52 @@
+.input {
+  flex: 1;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid darkgray;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
+  border-right: none;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inputWithButton {
+  display: flex;
+  align-items: center;
+}
+
+.inputButton {
+  height: 43.43px;
+  padding: 0 16px;
+  background-color: white;
+  color: black;
+  border: 2px solid darkgray;
+  border-left: none;
+  border-radius:  0 5px 5px 0px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.superInput {
+}
+
+.errorInput {
+  border: 1px solid #cc0000;
+  border-right: none;
+}
+
+.errorInput:focus {
+
+}
+
+.error {
+  display: flex;
+  justify-content: flex-start;
+  color: #cc0000;
+  font-size: 12px;
+}

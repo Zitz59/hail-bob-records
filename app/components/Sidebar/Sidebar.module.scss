@@ -1,0 +1,92 @@
+@media screen and (min-width: 619px){
+  .sidebar {
+    display: none !important;
+  }
+  .background{
+    display: none!important;
+  }
+
+}
+.sidebar {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 100;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.closing {
+  transform: translateX(-100%);
+}
+
+.close {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 15px;
+  font-size: 50px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  z-index: 3;
+}
+
+.close.spin {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50; /* Под сайдбаром */
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 8px;
+  transition: 0.3s;
+}
+
+.nav a:visited {
+  color: inherit;
+}
+
+.nav a:hover {
+  color: #676767;
+}
+
+
+.nav a.active {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.close img {
+}

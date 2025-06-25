@@ -1,0 +1,13 @@
+.socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  a {
+    transition: transform 0.2s ease;
+  }
+
+  a:hover {
+    transform: scale(1.3);
+  }
+}

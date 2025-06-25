@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+  text-align:match-parent;
+  padding-right: 40px;
+
+
+  @media only screen and (max-width: 921px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: flex-start;
+  }
+
+  @media only screen and (max-width: 618px){
+    display: none !important;
+  }
+}
