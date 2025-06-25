@@ -1,13 +1,6 @@
-import React, {
-	ChangeEvent,
-	DetailedHTMLProps,
-	InputHTMLAttributes,
-	KeyboardEvent,
-	ReactNode,
-} from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode,} from 'react'
 import s from './SuperInputText.module.scss'
 import Image from "next/image";
-import arrowIcon from '../../../public/icons/rightArrowIcon.png'
 import Button from "@/app/components/Button/Button";
 
 
@@ -77,7 +70,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 					{...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
 				/>
 				{/*<button className={s.inputButton} ></button>*/}
-				<Button><Image src={arrowIcon} alt="submit" width={24} height={24}/></Button>
+				<Button><Image src="/icons/rightArrowIcon.png" alt="submit" width={24} height={24}/></Button>
 			</div>
 
 
