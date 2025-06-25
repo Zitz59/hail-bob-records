@@ -20,7 +20,9 @@ export const Header = forwardRef<HTMLDivElement, PropsType>(
                     <Navbar />
                 </div>
                 <Image
-                    src="/icons/burgerMenu.svg"
+                    width={160}
+                    height={160}
+                    src="/icons/burgerIconMenu.svg"
                     id="burger-menu"
                     alt="open-menu"
                     className={styles.burgerMenuIcon}
