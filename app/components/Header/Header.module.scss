@@ -1,14 +1,34 @@
+.burgerMenuIcon {
+  padding-right: 20px;
+  cursor: pointer;
+  height: 40px;
+  width: 55px;
+  transition: transform 0.3s ease-out;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .burgerMenuIcon {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    padding-right: 20px;
+  }
+}
+
 @media screen and (min-width: 619px) {
   .burgerMenuIcon {
     display: none !important;
   }
 }
 
+// --- адаптив для header и logo ---
+
 @media screen and (max-width: 618px) {
   .header {
-    //  justify-content: space-between;
-    //  align-items: center;
-    //  padding: 10px;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 16px;
@@ -21,28 +41,15 @@
     flex-shrink: 0;
     overflow: hidden;
   }
-
-  .burgerMenuIcon {
-    //width: 50vw;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    //padding-left: 0;
-    display: flex;
-    padding-right: 0;
-    width:30px;
-    height:30px;
-  }
-
 }
 
+// --- базовые стили ---
 
 .header {
-  margin: 0 0;
-  padding: 16px 0 16px 0;
+  margin: 0;
+  padding: 16px 0;
   display: flex;
   flex-direction: row;
-  //justify-content: start;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -54,8 +61,6 @@
   background-color: black;
 
   .logo-container {
-    //display: block;
-    //justify-content: center;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -66,21 +71,8 @@
   }
 }
 
-.burgerMenuIcon {
-  //padding-left: 30px;
-  padding-right: 20px;
-  cursor: pointer;
-  height: 32px;
-  width: 32px;
-}
-
-.burgerMenuIcon.open {
-  transform: rotate(90deg);
-  transition: transform 0.3s ease-in-out;
-}
-
 .navWrapper {
-  flex: 1; // растягивается на всё доступное между логотипом и бургером
+  flex: 1;
   display: flex;
   justify-content: flex-end;
 
