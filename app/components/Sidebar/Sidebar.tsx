@@ -1,7 +1,6 @@
 "use client"
 import {FC, useEffect, useState} from "react";
 import s from './Sidebar.module.scss'
-import closeIcon from './close_icon.svg'
 import Image from "next/image";
 import NavLink from "@/app/components/NavLink/NavLink";
 import {navLinks} from "@/app/constants/navLinks";
@@ -69,7 +68,9 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
 			<aside className={sidebarClass}>
 				<button className={closeClass} onClick={handleClose}>
 					<Image
-						src={closeIcon}
+						width={40}
+						height={40}
+						src="/icons/close_icon.png"
 						alt="close sidebar"
 						id={'sidebar-menu-close'}
 					/>
