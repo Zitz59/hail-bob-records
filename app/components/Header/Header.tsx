@@ -2,21 +2,16 @@
 
 import styles from "./Header.module.scss"
 import Image from "next/image"
-import {ForwardedRef, forwardRef, useState} from "react"
+import {ForwardedRef, forwardRef} from "react"
 import Navbar from "@/app/components/NavBar/Navbar";
 
 type PropsType = {
 	handleOpen: () => void
+	open: boolean
 }
 
 export const Header = forwardRef<HTMLDivElement, PropsType>(
-	({handleOpen}, ref: ForwardedRef<HTMLDivElement>) => {
-		const [open, setOpen] = useState(false)
-
-		const onClickHandler = () => {
-			setOpen(prev => !prev)
-			handleOpen()
-		}
+	({handleOpen,open}, ref: ForwardedRef<HTMLDivElement>) => {
 
 		return (
 			<div ref={ref} className={styles.header}>
@@ -35,7 +30,7 @@ export const Header = forwardRef<HTMLDivElement, PropsType>(
 					id="burger-menu"
 					alt="open-menu"
 					className={`${styles.burgerMenuIcon} ${open ? styles.open : ''}`}
-					onClick={onClickHandler}
+					onClick={handleOpen}
 				/>
 			</div>
 		)

@@ -1,13 +1,9 @@
 .burgerMenuIcon {
+  display: inline-block;
   padding-right: 20px;
   cursor: pointer;
   height: 40px;
   width: 55px;
-  transition: transform 0.3s ease-out;
-
-  &.open {
-    transform: rotate(180deg);
-  }
 }
 
 @media screen and (max-width: 618px) {
