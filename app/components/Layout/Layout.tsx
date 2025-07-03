@@ -40,7 +40,7 @@ export default function Layout({children}: PropsType) {
 	return (
 		<>
 			<Sidebar open={open} handleClose={handleClose}/>
-			<Header handleOpen={handleOpen} ref={headerRef}/>
+			<Header handleOpen={handleOpen} open={open} ref={headerRef}/>
 
 			<main style={{marginTop: headerHeight}}>
 				{/*страницы*/}

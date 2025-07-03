@@ -68,7 +68,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
 			<aside className={sidebarClass}>
 				<button className={closeClass} onClick={handleClose}>
 					<Image
-						width={40}
+						width={55}
 						height={40}
 						src="/icons/close_icon.png"
 						alt="close sidebar"
