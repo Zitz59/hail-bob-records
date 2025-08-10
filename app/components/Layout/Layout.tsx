@@ -3,7 +3,7 @@ import React, {ReactNode, useEffect, useLayoutEffect, useRef, useState} from 're
 import {Sidebar} from "@/app/components/Sidebar/Sidebar";
 import {Header} from "@/app/components/Header/Header";
 import {Footer} from "@/app/components/Footer/Footer";
-
+import styles from "./Layout.module.scss"
 
 type PropsType = {
 	children: ReactNode
@@ -39,14 +39,17 @@ export default function Layout({children}: PropsType) {
 
 	return (
 		<>
+			<div className={styles.pageWrapper}>
 			<Sidebar open={open} handleClose={handleClose}/>
 			<Header handleOpen={handleOpen} open={open} ref={headerRef}/>
 
-			<main style={{marginTop: headerHeight}}>
+			<main style={{marginTop: headerHeight}}
+			className={styles.main}>
 				{/*страницы*/}
 				{children}
 			</main>
 			<Footer />
+			</div>
 		</>
 	)
 }
