@@ -16,7 +16,7 @@ export const Header = forwardRef<HTMLDivElement, PropsType>(
 		return (
 			<div ref={ref} className={styles.header}>
 				<div className={styles.logoContainer}>
-					<img src="/logo/label_logo.jpg" alt="logo" width={100} height={100}
+					<img src="/logo/label_logo.jpg" alt="logo" className={styles.logo} width={100} height={100}
 						 style={{objectFit: "cover", borderRadius: "8px"}}/>
 				</div>
 				<div className={styles.navWrapper}>

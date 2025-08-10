@@ -1,49 +1,9 @@
-.burgerMenuIcon {
-  display: inline-block;
-  padding-right: 20px;
-  cursor: pointer;
-  height: 40px;
-  width: 55px;
-}
-
-@media screen and (max-width: 618px) {
-  .burgerMenuIcon {
-    display: flex;
-    width: 60px;
-    height: 50px;
-    padding-right: 20px;
-  }
-}
-
-@media screen and (min-width: 619px) {
-  .burgerMenuIcon {
-    display: none !important;
-  }
-}
-
-// --- адаптив для header и logo ---
-
-@media screen and (max-width: 618px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 16px;
-  }
-
-  .logoContainer {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-}
-
-// --- базовые стили ---
+// --- Base Styles ---
 
 .header {
+  height: auto;
   margin: 0;
-  padding: 16px 0;
+  padding: 0 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -56,15 +16,72 @@
   z-index: 1;
   background-color: black;
 
-  .logo-container {
+  .logoContainer {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-radius:12px;
+    overflow: hidden;
+    padding: 8px 0;
 
-    :hover {
+
+    &:hover {
       transform: scaleX(-1);
     }
   }
+
+  .logo{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+}
+
+.burgerMenuIcon {
+  display: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: 55px;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 618px) {
+  .burgerMenuIcon {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (min-width: 619px) {
+  .burgerMenuIcon {
+    display: none !important;
+  }
+}
+
+// --- adaptive for header and logo ---
+
+@media screen and (max-width: 618px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logoContainer {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
 }
 
 .navWrapper {
