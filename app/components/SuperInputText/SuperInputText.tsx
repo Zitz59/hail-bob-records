@@ -3,6 +3,7 @@ import s from './SuperInputText.module.scss'
 import Image from "next/image";
 import Button from "@/app/components/Button/Button";
 
+//TODO:дописать логику ошибок в инпуте
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
@@ -37,7 +38,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
 		onChangeText?.(e.currentTarget.value)
 	}
-	const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
+	const onKeyDownCallback = (e: KeyboardEvent<HTMLInputElement>) => {
 		onKeyDown?.(e)
 
 		onEnter && // если есть пропс onEnter
@@ -47,15 +48,17 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
 	const finalSpanClassName = s.error
 		+ (spanClassName ? ' ' + spanClassName : '')
-	const finalInputClassName = s.input
-		+ (error ? ' ' + s.errorInput : ' ' + s.superInput)
-		+ (className ? ' ' + className : '') // задача на смешивание классов
 
+	// const finalInputClassName = s.input
+	// 	+ (error ? ' ' + s.errorInput : ' ' + s.superInput)
+
+	const finalInputClassName = [
+		s.input, error ? s.errorInput : s.superInput,].join(' ')
 	return (
 		<div className={s.inputWrapper}>
 		<span
 			id={id ? id + '-span' : undefined}
-	className={finalSpanClassName}
+			// className={finalSpanClassName}
 		>
 		{error}
 		</span>
@@ -65,12 +68,18 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 					type={'text'}
 					placeholder="Email"
 					onChange={onChangeCallback}
-					onKeyPress={onKeyPressCallback}
+					onKeyDown={onKeyDownCallback}
 					className={finalInputClassName}
 					{...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
 				/>
 				{/*<button className={s.inputButton} ></button>*/}
-				<Button><Image src="/icons/rightArrowIcon.png" alt="submit" width={24} height={24}/></Button>
+				<Button className={s.inputButton}>
+					<Image
+						src="/icons/rightArrowIcon.png"
+						alt="submit"
+						width={20}
+						height={20}/>
+				</Button>
 			</div>
 	</div>
 )
