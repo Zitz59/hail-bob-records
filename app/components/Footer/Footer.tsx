@@ -12,7 +12,7 @@ export const Footer = (props: Props) => {
 		<footer className={styles.footer}>
 			<div className={styles.footerContentTop}>
 				<div className={styles.footerBlockNewsLetter}>
-					<form className={styles.footerNewsletterForm} action="">
+					<form className={styles.footerNewsletterForm} action="" name='newsletter'>
 						<h2 className={styles.footerBlockHeading}>Subscribe to our emails</h2>
 						<div className={styles.formInput}>
 							<SuperInputText/>
