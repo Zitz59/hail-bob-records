@@ -1,33 +1,42 @@
 .input {
-  flex: 1;
-  height: 40px;
+  flex: 1 1 auto;
+  height: 43.43px;
+  min-width: 200px;
   border-radius: 5px 0 0 5px;
   border: 2px solid darkgray;
   padding: 0 10px;
   font-size: 16px;
   outline: none;
   border-right: none;
+  box-sizing: border-box;
 }
 
 .inputWrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex-wrap: wrap;
 }
 
 .inputWithButton {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .inputButton {
+  display: flex;
+  flex: 0 0 60px;
+  align-items: center;
+  justify-content: center;
   height: 43.43px;
+  width: 28px;
   padding: 0 16px;
   background-color: white;
   color: black;
   border: 2px solid darkgray;
   border-left: none;
-  border-radius:  0 5px 5px 0px;
+  border-radius:  0 5px 5px 0;
   cursor: pointer;
   transition: background 0.3s ease;
 }
