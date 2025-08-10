@@ -1,5 +1,6 @@
+import s from '../../styles/pages.module.scss'
 export default function Page() {
 	return (
-		<div>Pre orders page</div>
+		<div className={s.preordersBlock}>Pre orders page</div>
 	)
 }

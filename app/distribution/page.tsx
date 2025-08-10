@@ -1,9 +1,7 @@
-import {ThemeToggle} from "@/app/components/ThemeToggle/ThemeToggle";
+import styles from '../../styles/pages.module.scss'
 
 export default function Page() {
 	return (
-		<main>
-			<div className="text-2xl text-black dark:text-white">Distribution Page</div>
-		</main>
+		<div className={styles.distributionBlock}>Distribution Page</div>
 	)
 }
