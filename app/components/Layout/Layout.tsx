@@ -5,6 +5,9 @@ import {Header} from "@/app/components/Header/Header";
 import {Footer} from "@/app/components/Footer/Footer";
 import styles from "./Layout.module.scss"
 
+//TODO:1)сделать так чтобы во вкладке браузера был логотип
+//TODO:2)сделать так чтобы на всех ссылках кратинкой был логотип
+
 type PropsType = {
 	children: ReactNode
 }
@@ -40,15 +43,16 @@ export default function Layout({children}: PropsType) {
 	return (
 		<>
 			<div className={styles.pageWrapper}>
-			<Sidebar open={open} handleClose={handleClose}/>
-			<Header handleOpen={handleOpen} open={open} ref={headerRef}/>
-
-			<main style={{marginTop: headerHeight}}
-			className={styles.main}>
-				{/*страницы*/}
-				{children}
-			</main>
-			<Footer />
+				<Header handleOpen={handleOpen} open={open} ref={headerRef}/>
+				<div className={styles.content}>
+					<Sidebar open={open} action={handleClose}/>
+					<main style={{marginTop: headerHeight}}
+						  className={`${styles.main} mx-auto w-full max-w-screen-xl px-4 xs:px-5 md:px-6`}>
+						{/*страницы*/}
+						{children}
+					</main>
+				</div>
+				<Footer/>
 			</div>
 		</>
 	)
