@@ -13,14 +13,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   background-color: black;
 
   .logoContainer {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-radius:12px;
+    border-radius: 12px;
     overflow: hidden;
     padding: 8px 0;
 
@@ -30,13 +30,23 @@
     }
   }
 
-  .logo{
+  .logo {
     height: 100px;
     width: 100px;
     object-fit: cover;
     border-radius: inherit;
   }
 }
+
+.navWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center; //flex-end
+  @media screen and (max-width: 619px) {
+    display: none;
+  }
+}
+
 
 .burgerMenuIcon {
   display: inline-block;
@@ -84,15 +94,6 @@
 
 }
 
-.navWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-
-  @media screen and (max-width: 619px) {
-    display: none;
-  }
-}
 
 .header h1 {
   padding-right: 70px;

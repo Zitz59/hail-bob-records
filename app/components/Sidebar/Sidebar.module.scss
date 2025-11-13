@@ -1,62 +1,44 @@
-@media screen and (min-width: 619px){
-  .sidebar {
-    display: none !important;
-  }
-  .background{
-    display: none!important;
-  }
+/* ===== МОБИЛКА: фуллскрин drawer ===== */
 
-}
 .sidebar {
-  height: 100%;
-  width: 260px;
   position: fixed;
-  top: 40px;
+  top: 0;
   right: 0;
-  overflow-x: hidden;
-  padding-top: 80px;
+  bottom: 0;               /* растягиваем до низа */
+  width: 260px;
+  padding-top: 80px;       /* отступ сверху под крестик/лого */
+
   background-color: #000;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
   z-index: 100;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
 }
 
-.sidebar.open {
+.sidebar[data-open="true"] {
   transform: translateX(0);
 }
 
-.sidebar.closing {
-  transform: translateX(100%);
+/* затемнение поверх всей страницы */
+.background {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
 }
 
+/* крестик */
 .close {
   position: absolute;
-  display: inline-block;
-  top: 0;
-  right: 15px;
+  top: 20px;
+  right: 190px;
   font-size: 40px;
-  overflow: hidden;
   border: none;
   outline: none;
   background: none;
   cursor: pointer;
-  transition: transform 0.5s ease-in-out;
-  z-index: 3;
-}
-
-.close.spin {
-  transform: rotate(180deg);
   transition: transform 0.3s ease-in-out;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 50; /* Под сайдбаром */
+  z-index: 101;
 }
 
 .nav {
@@ -64,29 +46,34 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+/* ===== ТОЛЬКО ПЛАНШЕТ: sidebar слева постоянно ===== */
+@media screen and (min-width: 768px) and (max-width: 1023.98px) {
+  .sidebar {
+    position: static;    /* входит в поток */
+    transform: none;     /* всегда виден */
+    height: auto;
+    padding-top: 0;
+  }
+
+  .background {
+    display: none;       /* затемнение не нужно */
+  }
+
+  .close {
+    display: none;       /* крестик тоже */
+  }
 
 }
 
-.nav a {
-  text-decoration: none;
-  font-size: 25px;
-  padding: 8px;
-  transition: 0.3s;
-}
+/* ===== ДЕСКТОП >= 1024px: sidebar не нужен ===== */
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
 
-.nav a:visited {
-  color: inherit;
-}
-
-.nav a:hover {
-  color: #676767;
-}
-
-
-.nav a.active {
-  text-decoration: underline;
-  color: #ffffff;
-}
-
-.close img {
+  .background {
+    display: none;
+  }
 }

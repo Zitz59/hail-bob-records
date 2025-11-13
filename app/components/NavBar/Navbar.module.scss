@@ -1,24 +1,22 @@
 .navbar {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative;
-  justify-content: space-between;
-  text-align:match-parent;
-  //padding-right: 40px;
+  display: none;              /* по умолчанию скрываем (мобилка) */
+}
 
-
-  @media only screen and (max-width: 921px) {
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow: hidden;
-    align-items: flex-start;
-  }
-
-  @media only screen and (max-width: 618px){
-    display: none !important;
+/* показываем горизонтальное меню начиная с 619px */
+@media only screen and (min-width: 619px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* меню по центру между логотипом и правым краем */
+    gap: 40px;
+    white-space: nowrap;      /* не даём пунктам переноситься */
+    width: 100%;
   }
 }
 
-//TODO:разобраться с NavBar (расположить элементы по центру после <900px)
+/* на чуть более широких экранах можно увеличить расстояние */
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    gap: 56px;
+  }
+}
