@@ -4,6 +4,28 @@
   min-height: 100vh;
 }
 
-.main{
-  flex: 1;// занимает всё пространство между footer и header
+/* обёртка для sidebar + main */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
+
+/* main растягивается на всё доступное */
+.main {
+  flex: 1;
+}
+
+/* на планшете и выше — sidebar слева, main справа */
+@media screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;       /* слева направо */
+    align-items: stretch;
+  }
+
+  .main {
+    /* чтобы main занимал оставшееся место */
+    flex: 1;
+  }
+}
+
