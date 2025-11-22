@@ -15,9 +15,10 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.sidebar[data-open="true"] {
+.sidebar.open {
   transform: translateX(0);
 }
+
 
 /* затемнение поверх всей страницы */
 .background {
@@ -49,23 +50,21 @@
 }
 
 /* ===== ТОЛЬКО ПЛАНШЕТ: sidebar слева постоянно ===== */
-@media screen and (min-width: 768px) and (max-width: 1023.98px) {
+@media screen and (min-width: 1100px) {
   .sidebar {
-    position: static;    /* входит в поток */
-    transform: none;     /* всегда виден */
-    height: auto;
-    padding-top: 0;
+    display: none;
   }
 
   .background {
-    display: none;       /* затемнение не нужно */
+    display: none;
   }
+}
 
   .close {
     display: none;       /* крестик тоже */
   }
 
-}
+
 
 /* ===== ДЕСКТОП >= 1024px: sidebar не нужен ===== */
 @media screen and (min-width: 1024px) {

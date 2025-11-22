@@ -1,22 +1,46 @@
 .navbar {
-  display: none;              /* по умолчанию скрываем (мобилка) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  white-space: nowrap;
+  width: 100%;
 }
 
-/* показываем горизонтальное меню начиная с 619px */
-@media only screen and (min-width: 619px) {
+@media (min-width: 1400px) {
   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;  /* меню по центру между логотипом и правым краем */
-    gap: 40px;
-    white-space: nowrap;      /* не даём пунктам переноситься */
-    width: 100%;
+    gap: 48px;
   }
 }
 
-/* на чуть более широких экранах можно увеличить расстояние */
-@media only screen and (min-width: 1024px) {
-  .navbar {
-    gap: 56px;
-  }
-}
+///* показываем горизонтальное меню начиная с 619px */
+//@media only screen and (min-width: 619px) {
+//  .navbar {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;  /* меню по центру между логотипом и правым краем */
+//    gap: 40px;
+//    white-space: nowrap;      /* не даём пунктам переноситься */
+//    width: 100%;
+//  }
+//}
+//
+//@media (min-width: 768px) and (max-width: 1395px) {
+//  .navbar {
+//    gap: 20px;
+//  }
+//}
+//
+//@media (min-width: 1600px) {
+//  .navbar {
+//    gap: 48px;
+//  }
+//}
+/////* на чуть более широких экранах можно увеличить расстояние */
+////@media only screen and (min-width: 1024px) {
+////  .navbar {
+////    gap: 56px;
+////  }
+////}
+
+
