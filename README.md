@@ -1,67 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https://developers.cloudflare.com/pages/get-started/c3).
+# 🎧 Hail Bob Records
 
-## Getting Started
+A modern web platform for an independent electronic music label — inspired by [L.I.E.S. Records](https://liesrecords.com/) and designed with motion-driven, interactive visuals.
 
-First, run the development server:
+![Hail Bob Records Preview](public/preview.png)
 
+## 🚀 Tech Stack
+- **Next .js 15 (App Router)**
+- **React 18**
+- **Tailwind CSS / Framer Motion**
+- **TypeScript**
+- **Cloudflare Pages for deployment**
+- **WordPress REST API (for future content integration)**
+
+## 🧠 Concept
+Hail Bob Records is a web space combining minimalism and raw visual energy typical of underground labels.  
+The goal is to make a site that *feels alive* — every scroll, hover, or page transition adds motion, not clutter.
+
+## 📱 Features
+- Responsive / **Mobile-first** layout  
+- Animated transitions with Framer Motion  
+- Sidebar navigation and drawer menu on mobile  
+- Modular page structure with Next App Router  
+- CMS integration via WordPress API (soon)
+
+- ## 🧩 Structure
+├── layout.tsx → global layout & header/footer
+├── preorders/ → Pre-orders page
+├── releases/ → List of releases
+├── artists/ → Artist profiles
+└── about/ → Label info page
+
+
+## 💻 Development
+Clone & run locally:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/Zitz59/hail-bob-records
+cd hail-bob-records
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployment → Cloudflare Pages
 
-## Cloudflare integration
+🌱 Roadmap
 
-Besides the `dev` script mentioned above `c3` has added a few extra scripts that allow you to integrate the application with the [Cloudflare Pages](https://pages.cloudflare.com/) environment, these are:
-  - `pages:build` to build the application for Pages using the [`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages) CLI
-  - `preview` to locally preview your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
-  - `deploy` to deploy your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
+ Connect WordPress REST API
 
-> __Note:__ while the `dev` script is optimal for local development you should preview your Pages application as well (periodically or before deployments) in order to make sure that it can properly work in the Pages environment (for more details see the [`@cloudflare/next-on-pages` recommended workflow](https://github.com/cloudflare/next-on-pages/blob/main/internal-packages/next-dev/README.md#recommended-development-workflow))
+ Add music player component/or songs and albums preview
 
-### Bindings
+ Implement SEO meta tags and OpenGraph preview
 
-Cloudflare [Bindings](https://developers.cloudflare.com/pages/functions/bindings/) are what allows you to interact with resources available in the Cloudflare Platform.
+ Accessibility audit (Lighthouse AA)
 
-You can use bindings during development, when previewing locally your application and of course in the deployed application:
+ Add dark / light mode switch
 
-- To use bindings in dev mode you need to define them in the `next.config.js` file under `setupDevBindings`, this mode uses the `next-dev` `@cloudflare/next-on-pages` submodule. For more details see its [documentation](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md).
+🧑‍🎨 Author
 
-- To use bindings in the preview mode you need to add them to the `pages:preview` script accordingly to the `wrangler pages dev` command. For more details see its [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev-1) or the [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+Aleksandr Zaitsev — Frontend Developer
+[🌐 Portfolio](https://hail-bob-records.pages.dev/)
+[💼 LinkedIn](https://linkedin.com/in/aleksandr-zaitsev-322354235)
+[📧 Email](mailto:Aleks.Zaitsev@proton.me)
 
-- To use bindings in the deployed application you will need to configure them in the Cloudflare [dashboard](https://dash.cloudflare.com/). For more details see the  [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
-
-#### KV Example
-
-`c3` has added for you an example showing how you can use a KV binding.
-
-In order to enable the example:
-- Search for javascript/typescript lines containing the following comment:
-  ```ts
-  // KV Example:
-  ```
-  and uncomment the commented lines below it (also uncomment the relevant imports).
-- In the `wrangler.jsonc` file add the following configuration line:
-  ```
-  "kv_namespaces": [{ "binding": "MY_KV_NAMESPACE", "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }],
-  ```
-- If you're using TypeScript run the `cf-typegen` script to update the `env.d.ts` file:
-  ```bash
-  npm run cf-typegen
-  # or
-  yarn cf-typegen
-  # or
-  pnpm cf-typegen
-  # or
-  bun cf-typegen
-  ```
-
-After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
-
-Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+Built with passion for sound and motion.
