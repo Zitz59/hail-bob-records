@@ -3,61 +3,77 @@
 // 1)CSS прыгает при нажатии на кнопку - исправить!
 // 2)Плеер перекрывает важные элементы интерфейса, исправить!
 
-import YouTube from 'react-youtube'
-import { useRef, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
+
+const STREAM_URL = 'https://your-icecast-host.com:8000/hailbob'
 
 export default function RadioPlayer() {
-    const playerRef = useRef<any>(null)
+
+    const audioRef = useRef<HTMLAudioElement | null>(null)
+
     const [isPlaying, setIsPlaying] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [hasError, setHasError] = useState<boolean>(false)
 
-    const onReady = (event: any) => {
-        playerRef.current = event.target
-    }
 
-    const play = () => {
-        playerRef.current?.playVideo()
-        setIsPlaying(true)
+    const play = async () => {
+        if (!audioRef.current) return
+        try {
+            setIsLoading(true)
+            setHasError(false)
+
+            audioRef.current.volume = 1
+            await audioRef.current.play()
+            setIsPlaying(true)
+        } catch (error) {
+            console.error('Radio play error', error)
+            setHasError(true)
+        } finally {
+            setIsLoading(false)
+        }
+
     }
 
     const pause = () => {
-        playerRef.current?.pauseVideo()
+        audioRef.current?.pause()
         setIsPlaying(false)
     }
 
+
+
     return (
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-black text-white p-4 rounded-xl z-50">
-            {/* Hidden YouTube Player */}
-            <YouTube
-                videoId="ABC123XYZ"
-                onReady={onReady}
-                opts={{
-                    height: '0',
-                    width: '0',
-                    playerVars: {
-                        autoplay: 0,
-                        controls: 0,
-                        modestbranding: 1,
-                    },
-                }}
+        <div className="fixed bottom-0 left-0 w-full bg-black text-white p-4 z-40">
+            {/* Audio element */}
+            <audio
+                ref={audioRef}
+                src={STREAM_URL}
+                preload="none"
             />
 
-            {/* UI */}
             <p className="text-sm opacity-70">Hail Bob Radio — Live</p>
 
-            {!isPlaying ? (
-                <button
-                    onClick={play}
-                    className="mt-2 w-full py-3 bg-white text-black rounded-lg"
-                >
-                    ▶ Listen Live
-                </button>
-            ) : (
-                <button
-                    onClick={pause}
-                    className="mt-2 w-full py-3 border border-white rounded-lg"
-                >
-                    ❚❚ Pause
-                </button>
+            <button
+                onClick={isPlaying ? pause : play}
+                disabled={isLoading}
+                className="
+          mt-2 w-full py-3
+          rounded-lg
+          bg-white text-black
+          transition
+          disabled:opacity-50
+        "
+            >
+                {isLoading
+                    ? 'Connecting…'
+                    : isPlaying
+                        ? '❚❚ Stop'
+                        : '▶ Listen Live'}
+            </button>
+
+            {hasError && (
+                <p className="mt-2 text-xs text-red-400">
+                    Stream unavailable
+                </p>
             )}
         </div>
     )
