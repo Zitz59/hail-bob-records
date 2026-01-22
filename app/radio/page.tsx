@@ -3,6 +3,8 @@ import React from "react";
 
 export default function Radio(){
     return (
-        <div><RadioPlayer/></div>
+        <div className="flex items-center justify-center h-screen">
+            <RadioPlayer/>
+        </div>
     )
 }
