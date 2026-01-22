@@ -4,7 +4,6 @@ import {Sidebar} from "@/app/components/Sidebar/Sidebar";
 import {Header} from "@/app/components/Header/Header";
 import {Footer} from "@/app/components/Footer/Footer";
 import styles from "./Layout.module.scss"
-import RadioPlayer from "@/app/components/RadioPlayer/RadioPlayer";
 
 //TODO:1)сделать так чтобы во вкладке браузера был логотип
 //TODO:2)сделать так чтобы на всех ссылках кратинкой был логотип
@@ -54,7 +53,6 @@ export default function Layout({children}: PropsType) {
 					</main>
 				</div>
 				<Footer/>
-				<RadioPlayer/>
 			</div>
 		</>
 	)
