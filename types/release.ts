@@ -2,7 +2,7 @@ export type Release = {
 	slug: string;			// используется в URL: /releases/<slug>
 	artist: string;
 	title: string;
-	year: number;
+	year: string;
 	catalogNumber?:string;
 	cover: string;			 // путь до обложки (из /public)
 	description?: string;	 // HTML или markdown (пока просто строка)
