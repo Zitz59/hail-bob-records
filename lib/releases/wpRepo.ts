@@ -2,7 +2,7 @@ import {ReleasesRepo} from './repository'
 import type {Release} from '@/types/release'
 import {WPPost} from "@/types/wordpress";
 
-const WP_BASE = 'https://yourdomain.com/wp-json/wp/v2'
+const WP_BASE = 'https://hailbobrecords.com/wp-json/wp/v2'
 
 
 export const wpReleasesRepo: ReleasesRepo = {
@@ -42,6 +42,7 @@ export const wpReleasesRepo: ReleasesRepo = {
 }
 
 function mapWpToRelease(post: WPPost): Release {
+    console.log(post)
     //достаём URL обложки
     const coverUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/placeholder.jpg';
 
