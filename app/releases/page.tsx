@@ -1,8 +1,8 @@
-import ReleaseCard from "@/app/components/ReleaseCard/release-card";
-import {releasesRepo} from "@/lib/releases/mockRepo";
+import ReleaseCard from "@/app/components/ReleaseCard/ReleaseCard";
+import {wpReleasesRepo} from "@/lib/releases/wpRepo";
 
 export default async function ReleasesPage() {
-	const releases = await releasesRepo.list();
+	const releases = await wpReleasesRepo.list();
 
 	return (
 		<>
