@@ -2,7 +2,7 @@ import {ReleasesRepo} from './repository'
 import type {Release} from '@/types/release'
 import {WPPost} from "@/types/wordpress";
 
-const WP_BASE = 'https://hailbobrecords.com/wp-json/wp/v2'
+const WP_BASE = 'https://admin.hailbobrecords.com/wp-json/wp/v2'
 
 
 export const wpReleasesRepo: ReleasesRepo = {
