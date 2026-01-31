@@ -7,13 +7,19 @@
 // https://github.com/cloudflare/next-on-pages/blob/main/internal-packages/next-dev/README.md
 // setupDevPlatform().catch(console.error);
 
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
-	output: 'export',
-	images: {
-		unoptimized: true, // <--- добавь это
-	},
+    output: 'export',
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'hailbobrecords.com',
+            },
+        ]
+    },
 };
 
 export default nextConfig;
