@@ -1,22 +1,45 @@
-.footerNewsletterForm{
-  margin: 40px 80px 40px 80px;// отступы которые регулируют расстояние от main и боков desktop
+.footerNewsletterForm {
+  /* На мобилках маленькие боковые отступы, на десктопе — 80px */
+  margin: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center; /* По умолчанию всё по центру */
+  gap: 20px;
+
+  @media (min-width: 557px) {
+    margin: 40px 80px;
+    align-items: flex-start; /* На десктопе выравнивание влево */
+  }
+
+  @media (min-width: 1024px) {
+    margin: 40px 80px;       /* 80px для десктопа */
+  }
 }
-.formInput{
+
+.formInput {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* В столбик на мобилке */
   align-items: center;
+  gap: 16px;
+  width: 100%;
+
+  @media (min-width: 557px) {
+    flex-direction: row; /* Возвращаем в ряд, когда место позволяет */
+    justify-content: space-between;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
   gap: 20px;
   width: 100%;
-  flex-wrap: wrap;
-}
-.footerLinks{
-  display: flex;
-  @media (max-width: 667px) {
-    justify-content: center;
-    align-items: center;
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
   }
+}
+.inputField {
+  width: 100%;
+  max-width: 300px;
 }
