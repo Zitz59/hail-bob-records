@@ -1,16 +1,15 @@
 export type Release = {
-	slug: string;			// используется в URL: /releases/<slug>
+	slug: string;
 	artist: string;
 	title: string;
 	year: string;
-	catalogNumber?:string;
-	cover: string;			 // путь до обложки (из /public)
-	description?: string;	 // HTML или markdown (пока просто строка)
-	tracks?: {              // список треков (можно не заполнять)
-		title: string;
-		duration?: string;
-	}[];
-	links?: {				 // внешние ссылки (стриминги)
+	catalogNumber?: string;
+	cover: string;
+	description?: string;
+	tracklist?: string;
+	embedCode?: string;    // Приводим к camelCase
+	credits?: string;      // Необязательно
+	links?: {
 		spotify?: string;
 		apple?: string;
 		bandcamp?: string;
