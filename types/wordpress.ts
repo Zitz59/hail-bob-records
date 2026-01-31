@@ -17,6 +17,9 @@ export type WPPost = {
         }>;
     };
     acf?: {
+        apple_link: string;
+        spotify_link: string;
+        bandcamp_link: string;
         artist?: string;
         year?: string;
         catalog_number?: string;
