@@ -1,78 +1,70 @@
 /* ===== МОБИЛКА: фуллскрин drawer ===== */
-
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;               /* растягиваем до низа */
-  width: 260px;
-  padding-top: 80px;       /* отступ сверху под крестик/лого */
+  bottom: 0;
+  width: 74%;
+  max-width: 320px;
 
   background-color: #000;
+  border-left: 1px solid #333; /* Тонкая граница в стиле брутализма */
   z-index: 100;
 
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
 
-
-/* затемнение поверх всей страницы */
-.background {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 90;
-}
-
-/* крестик */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 190px;
-  font-size: 40px;
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  z-index: 101;
-}
-
+/* Навигация */
 .nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start; /* Выравнивание по левому краю */
+  gap: 15px;
+  width: 100%;
 }
 
-/* ===== ТОЛЬКО ПЛАНШЕТ: sidebar слева постоянно ===== */
-@media screen and (min-width: 1100px) {
-  .sidebar {
-    display: none;
-  }
-
-  .background {
-    display: none;
-  }
+.nav a {
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  word-break: break-all;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;    /* Запрещаем перенос слов */
 }
 
-  .close {
-    display: none;       /* крестик тоже */
-  }
+.nav a:hover {
+  color: #555;            /* Эффект при наведении */
+}
 
+/* Крестик */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;             /* Ставим справа от края сайдбара */
+  font-size: 32px;
+  color: #fff;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 101;
+}
 
-
-/* ===== ДЕСКТОП >= 1024px: sidebar не нужен ===== */
-@media screen and (min-width: 1024px) {
-  .sidebar {
-    display: none;
-  }
-
-  .background {
-    display: none;
-  }
+/* Затемнение */
+.background {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Сделаем темнее для акцента */
+  backdrop-filter: blur(4px);           /* Легкий блюр */
+  z-index: 90;
 }
