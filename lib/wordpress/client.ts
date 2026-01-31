@@ -1,4 +1,4 @@
-const WP_BASE = process.env.WORDPRESS_API_URL ?? 'https://example.com/wp-json/wp/v2';
+const WP_BASE = process.env.WORDPRESS_API_URL ?? 'https://admin.hailbobrecords.com/wp-json/wp/v2';
 
 export async function wpFetch<T>(path:string,init?:RequestInit): Promise<T> {
 	const res = await fetch(`${WP_BASE}${path}`, {
