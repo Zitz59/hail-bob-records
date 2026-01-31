@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import {wpReleasesRepo} from "@/lib/releases/wpRepo";
 
-export default async function ReleasePage({ params }: { params: { slug: string } }) {
+export default async function ReleasePage({ params }: { params:Promise <{ slug: string }> }) {
     // Получаем данные из WP по слагу из URL
-    const release = await wpReleasesRepo.getBySlug(params.slug);
+    const {slug} = await params;
+
+    const release = await wpReleasesRepo.getBySlug(slug);
 
     // Если WP не нашел такой релиз — показываем 404
     if (!release) {
