@@ -4,6 +4,18 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import {wpReleasesRepo} from "@/lib/releases/wpRepo";
 
+export async function generateStaticParams() {
+    try {
+        const releases = await wpReleasesRepo.list();
+        return releases.map((release) => ({
+            slug: release.slug,
+        }));
+    } catch (error) {
+        console.error("Static params error:", error);
+        return [];
+    }
+}
+
 export default async function ReleasePage({ params }: { params:Promise <{ slug: string }> }) {
     // Получаем данные из WP по слагу из URL
     const {slug} = await params;
