@@ -57,7 +57,6 @@ function mapWpToRelease(post: WPPost): Release {
         tracklist: post.acf?.tracklist || '',
         embedCode: post.acf?.embed_code || '',
         credits: post.acf?.credits || '',
-
         links: {
             bandcamp: post.acf?.bandcamp_link || '', // проверь имя поля в ACF!
             spotify: post.acf?.spotify_link || '',

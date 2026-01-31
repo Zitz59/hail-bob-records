@@ -6,6 +6,7 @@ export type Release = {
 	catalogNumber?: string;
 	cover: string;
 	description?: string;
+
 	tracklist?: string;
 	embedCode?: string;    // Приводим к camelCase
 	credits?: string;      // Необязательно
