@@ -2,8 +2,11 @@ import {ReleasesRepo} from './repository'
 import type {Release} from '@/types/release'
 import {WPPost} from "@/types/wordpress";
 
-const WP_BASE = 'https://admin.hailbobrecords.com/wp-json/wp/v2'
+const WP_BASE = process.env.WORDPRESS_API_URL
 
+if (!WP_BASE) {
+    console.warn("WARNING: WORDPRESS_API_URL is not defined in environment variables!")
+}
 
 export const wpReleasesRepo: ReleasesRepo = {
     async list(): Promise<Release[]> {
