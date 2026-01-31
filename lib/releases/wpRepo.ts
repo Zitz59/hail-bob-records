@@ -54,6 +54,10 @@ function mapWpToRelease(post: WPPost): Release {
         catalogNumber: post.acf?.catalog_number || 'HB-???',
         cover: coverUrl,
         description: post.content?.rendered,
+        tracklist: post.acf?.tracklist || '',
+        embedCode: post.acf?.embed_code || '',
+        credits: post.acf?.credits || '',
+
         links: {
             bandcamp: post.acf?.bandcamp_link || '', // проверь имя поля в ACF!
             spotify: post.acf?.spotify_link || '',
