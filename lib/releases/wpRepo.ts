@@ -3,7 +3,6 @@ import type {Release} from '@/types/release'
 import {WPPost} from "@/types/wordpress";
 
 const WP_BASE = process.env.WORDPRESS_API_URL
-
 if (!WP_BASE) {
     console.warn("WARNING: WORDPRESS_API_URL is not defined in environment variables!")
 }
