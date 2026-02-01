@@ -11,26 +11,29 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(8px, 2vw, 16px) clamp(16px, 5vw, 40px);
-  gap: 20px;
+  padding: 12px 20px;
   box-sizing: border-box;
+
+  @media (min-width: 557px) {
+    padding-left: 80px;  // Десктопная версия (совпадает с футером 80px)
+    padding-right: 80px;}
 
   .logoContainer {
     flex-shrink: 0;
     display: flex;
-    align-items: center;
-    transition: transform 0.3s ease;
-    &:hover { transform: scaleX(-1); }
+    align-items: center ;
   }
 
   .logo {
     width: auto;
-    height: clamp(50px, 8vw, 80px);
+    height: clamp(80px, 12vw, 140px);
     object-fit: contain;
+    margin-top: -20px;
+    margin-bottom: -20px;
   }
 }
 
-$breakpoint-desktop: 1750px;
+$breakpoint-desktop: 1550px;
 
 .navWrapper {
   display: none;
