@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Hail Bob Records",
-		description: "Chemical house for sad earth residents.",
+		description: "Hail Bob Records is an independent label focused on house, electro, techno, and industrial, releasing digital music and cassette editions rooted in underground culture.",
 		images: ["/og-hail-bob.png"],
 	},
 };
