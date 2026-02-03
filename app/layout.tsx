@@ -63,9 +63,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://hail-bob-records.pages.dev/"),
+	metadataBase: new URL("https://hailbobrecords.com/"),
 	title: "Hail Bob Records",
-	description: "Chemical house for sad earth residents.",
+	description: "Hail Bob Records is an independent label focused on house, electro, techno, and industrial, releasing digital music and cassette editions rooted in underground culture.",
 	icons: {
 		icon: [
 			{url: "/favicon-light.png", media: "(prefers-color-scheme: light)"},
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		title: "Hail Bob Records",
-		description: "Chemical house for sad earth residents.",
-		url: "https://hail-bob-records.pages.dev/",
+		description: "Hail Bob Records is an independent label focused on house, electro, techno, and industrial, releasing digital music and cassette editions rooted in underground culture.",
+		url: "https://hailbobrecords.com/",
 		siteName: "Hail Bob Records",
 		images: [
 			{
